@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-banner-1",
+      "description": "Stylish woman in a city street",
+      "imageUrl": "https://images.unsplash.com/photo-1578632292335-df3abbb0d586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwbW9kZWx8ZW58MHx8fHwxNzcxNDY2MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model"
+    },
+    {
+      "id": "category-women",
+      "description": "Collection of women's clothing",
+      "imageUrl": "https://images.unsplash.com/photo-1651489337165-f0f62bc3fc9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21lbnMlMjBmYXNoaW9ufGVufDB8fHx8MTc3MTU3Mzc0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "womens fashion"
+    },
+    {
+      "id": "category-men",
+      "description": "Collection of men's clothing",
+      "imageUrl": "https://images.unsplash.com/photo-1552168212-9ceb61083ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWVucyUyMGZhc2hpb258ZW58MHx8fHwxNzcxNTczNzQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mens fashion"
+    },
+    {
+      "id": "category-kids",
+      "description": "Collection of kids' clothing",
+      "imageUrl": "https://images.unsplash.com/photo-1590480598135-3be152c87913?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxraWRzJTIwZmFzaGlvbnxlbnwwfHx8fDE3NzE1MTkyNjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids fashion"
+    },
+    {
+      "id": "product-1-a",
+      "description": "Blue denim jacket front view",
+      "imageUrl": "https://images.unsplash.com/photo-1618393649689-c997c7455ef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZW5pbSUyMGphY2tldHxlbnwwfHx8fDE3NzE1NzMwOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "denim jacket"
+    },
+    {
+      "id": "product-1-b",
+      "description": "Blue denim jacket back view",
+      "imageUrl": "https://images.unsplash.com/photo-1537465978529-d23b17165b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZW5pbSUyMGphY2tldHxlbnwwfHx8fDE3NzE1NzMwOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "denim jacket"
+    },
+    {
+      "id": "product-2-a",
+      "description": "White cotton t-shirt",
+      "imageUrl": "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHQtc2hpcnR8ZW58MHx8fHwxNzcxNTczNzQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "white t-shirt"
+    },
+    {
+      "id": "product-3-a",
+      "description": "Black skinny jeans",
+      "imageUrl": "https://images.unsplash.com/photo-1531920724711-2e0aeed7aecf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxibGFjayUyMGplYW5zfGVufDB8fHx8MTc3MTU3Mzc0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "black jeans"
+    },
+    {
+      "id": "product-4-a",
+      "description": "Red floral summer dress",
+      "imageUrl": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdW1tZXIlMjBkcmVzc3xlbnwwfHx8fDE3NzE1NzM3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "summer dress"
+    },
+    {
+      "id": "product-5-a",
+      "description": "Beige trench coat",
+      "imageUrl": "https://images.unsplash.com/photo-1676716105765-e19fe6a01851?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmVuY2glMjBjb2F0fGVufDB8fHx8MTc3MTU3MzA5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trench coat"
+    },
+    {
+      "id": "product-6-a",
+      "description": "Grey hoodie",
+      "imageUrl": "https://images.unsplash.com/photo-1663993179887-fe97d16a4c36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxncmV5JTIwaG9vZGllfGVufDB8fHx8MTc3MTU3Mzc0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "grey hoodie"
+    },
+    {
+      "id": "product-7-a",
+      "description": "Leather biker jacket",
+      "imageUrl": "https://images.unsplash.com/photo-1551028719-00167b16eac5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWF0aGVyJTIwamFja2V0fGVufDB8fHx8MTc3MTQ4MDE2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather jacket"
+    },
+    {
+      "id": "product-8-a",
+      "description": "Navy blue chino pants",
+      "imageUrl": "https://images.unsplash.com/photo-1763451292680-89c538c0aa44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGlubyUyMHBhbnRzfGVufDB8fHx8MTc3MTU3Mzc0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chino pants"
+    }
+  ]
+}
