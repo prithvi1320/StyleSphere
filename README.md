@@ -1,5 +1,9 @@
-# Firebase Studio
+# StyleSphere
 
-This is a NextJS starter in Firebase Studio.
+StyleSphere is a Next.js ecommerce web app with customer storefront and admin management flows.
 
-To get started, take a look at src/app/page.tsx.
+Start the development server:
+
+```bash
+npm run dev
+```

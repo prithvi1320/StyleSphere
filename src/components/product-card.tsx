@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heart, ShoppingBag, Star } from 'lucide-react';
@@ -7,6 +9,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { useApp } from '@/components/app-provider';
+import { useToast } from '@/hooks/use-toast';
 
 interface ProductCardProps {
   product: Product;
@@ -15,6 +19,17 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className }: ProductCardProps) {
   const productImage = PlaceHolderImages.find((img) => img.id === product.imageIds[0]);
+  const { addToCart, toggleWishlist, isWishlisted } = useApp();
+  const { toast } = useToast();
+
+  const onAddToCart = () => {
+    addToCart(product.id, product.sizes[0] ?? 'M', product.colors[0] ?? 'Black', 1);
+    toast({ title: 'Added to cart', description: product.name });
+  };
+
+  const onToggleWishlist = () => {
+    toggleWishlist(product.id);
+  };
 
   return (
     <Card className={cn('overflow-hidden rounded-lg group', className)}>
@@ -24,13 +39,24 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <Image
               src={productImage.imageUrl}
               alt={product.name}
-              data-ai-hint={productImage.imageHint}
+             
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           )}
-           <div className="absolute top-2 right-2">
-            <Button size="icon" variant="ghost" className="rounded-full bg-background/50 backdrop-blur-sm hover:bg-background/70">
+          <div className="absolute top-2 right-2">
+            <Button
+              size="icon"
+              variant="ghost"
+              className={cn(
+                'rounded-full bg-background/50 backdrop-blur-sm hover:bg-background/70',
+                isWishlisted(product.id) && 'text-primary'
+              )}
+              onClick={(event) => {
+                event.preventDefault();
+                onToggleWishlist();
+              }}
+            >
               <Heart className="h-5 w-5" />
             </Button>
           </div>
@@ -52,7 +78,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <p className="text-lg font-headline font-bold text-primary">
           ${product.price.toFixed(2)}
         </p>
-        <Button size="sm">
+        <Button size="sm" onClick={onAddToCart}>
           <ShoppingBag className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
@@ -60,3 +86,4 @@ export function ProductCard({ product, className }: ProductCardProps) {
     </Card>
   );
 }
+

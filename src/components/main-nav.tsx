@@ -8,29 +8,28 @@ import {
   Search,
   ShoppingBag,
   User,
+  LogOut,
 } from 'lucide-react';
 
-import { Logo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { categories } from '@/lib/placeholder-data';
-
-const mainNavLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/products', label: 'All Products' },
-  ...categories.map((c) => ({ href: `/products?category=${c.id}`, label: c.name })),
-];
+import { useApp } from '@/components/app-provider';
 
 export function MainNav() {
   const pathname = usePathname();
+  const { categories, cartCount, currentUser, logout } = useApp();
+  const mainNavLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/products', label: 'All Products' },
+    ...categories.map((c) => ({ href: `/products?category=${c.id}`, label: c.name })),
+  ];
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
               StyleSphere
             </span>
@@ -51,7 +50,6 @@ export function MainNav() {
           </nav>
         </div>
 
-        {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
             <Button
@@ -65,7 +63,6 @@ export function MainNav() {
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <Logo className="h-6 w-6 text-primary" />
               <span className="font-bold font-headline">StyleSphere</span>
             </Link>
             <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
@@ -85,12 +82,10 @@ export function MainNav() {
             </div>
           </SheetContent>
         </Sheet>
-        
+
         <Link href="/" className="flex items-center space-x-2 md:hidden mx-auto">
-            <Logo className="h-6 w-6 text-primary" />
             <span className="font-bold font-headline">StyleSphere</span>
         </Link>
-
 
         <div className="flex flex-1 items-center justify-end space-x-2">
           <Button variant="ghost" size="icon">
@@ -104,17 +99,37 @@ export function MainNav() {
             </Button>
           </Link>
           <Link href="/cart">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="relative">
               <ShoppingBag className="h-5 w-5" />
               <span className="sr-only">Cart</span>
+              {cartCount > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-xs text-primary-foreground">
+                  {cartCount}
+                </span>
+              )}
             </Button>
           </Link>
-          <Link href="/login">
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Account</span>
-            </Button>
-          </Link>
+          {currentUser ? (
+            <>
+              <Link href="/profile">
+                <Button variant="ghost" size="icon">
+                  <User className="h-5 w-5" />
+                  <span className="sr-only">Account</span>
+                </Button>
+              </Link>
+              <Button variant="ghost" size="icon" onClick={logout}>
+                <LogOut className="h-5 w-5" />
+                <span className="sr-only">Logout</span>
+              </Button>
+            </>
+          ) : (
+            <Link href="/login">
+              <Button variant="ghost" size="icon">
+                <User className="h-5 w-5" />
+                <span className="sr-only">Account</span>
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </header>

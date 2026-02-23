@@ -1,24 +1,25 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { categories, products } from '@/lib/placeholder-data';
 import { ProductCard } from '@/components/product-card';
-import { Card, CardContent } from '@/components/ui/card';
+import { useApp } from '@/components/app-provider';
 
 export default function HomePage() {
+  const { categories, products } = useApp();
   const heroBanner = PlaceHolderImages.find((img) => img.id === 'hero-banner-1');
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
       <section className="relative h-[60vh] w-full text-white">
         {heroBanner && (
           <Image
             src={heroBanner.imageUrl}
             alt="Hero Banner"
-            data-ai-hint={heroBanner.imageHint}
+           
             fill
             className="object-cover"
             priority
@@ -38,7 +39,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
@@ -57,7 +57,7 @@ export default function HomePage() {
                       alt={category.name}
                       width={600}
                       height={800}
-                      data-ai-hint={categoryImage.imageHint}
+                     
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
@@ -74,7 +74,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products Section */}
       <section className="py-16 md:py-24 bg-card">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
@@ -95,3 +94,4 @@ export default function HomePage() {
     </div>
   );
 }
+
